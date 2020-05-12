@@ -4,15 +4,11 @@ import java.util.List;
 
 public class Student {
 	private int id;
-	private String firstName;
-	private String lastName;
-	private String contactEmail;
-	private String address;
+	private String firstName,lastName,contactEmail,address;
 	private List<String> modules; 
 	
 	public Student() {
 	}
-	
 	
 	public Student(int id, String firstName, String lastName, String contactEmail, String address,
 			List<String> modules) {

@@ -1,6 +1,8 @@
 package com.app.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,21 +24,50 @@ public class RegisterStudent extends HttpServlet{
 		
 		int id=Integer.parseInt(req.getParameter("id"));
 		String firstname=req.getParameter("firstname");
-		String lastname=req.getParameter("flastname");
+		String lastname=req.getParameter("lastname");
 		String contactEmail=req.getParameter("contactEmail");
 		String address=req.getParameter("address");
-		//String 
+		String a=req.getParameter("Java");
+		String b=req.getParameter("Python");
+		String c=req.getParameter("C++");
+		String d=req.getParameter("Spring");
+		String e=req.getParameter("SOAP");
+		String f=req.getParameter("WebServices");
+		String g=req.getParameter("JavaScript");
+		String h=req.getParameter("Angular");
+		String i=req.getParameter("Dot Net");
+		String j=req.getParameter("PHP");
+		String k=req.getParameter("HTML");
+		String l=req.getParameter("CSS");
+		String m=req.getParameter("SQL");
+		String n=req.getParameter("PL/SQL");
+		String o=req.getParameter("MongoDB");
+		String p=req.getParameter("NodeJS");
+		String q=req.getParameter("ReactJS");
+		String r=req.getParameter("MySQL");
+		String[] str= {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r};
+		List<String> list=new ArrayList<>();
+		for(String s:str) {
+			if(s!=null) {
+				list.add(s);
+			}
+		}
+		Student student=new Student(id, firstname, lastname, contactEmail, address, list);
 		
-		Student student=new Student(id, firstname, lastname, contactEmail, address, null);
+		System.out.println(student.getId());
+		System.out.println(student.getFirstName());
+		System.out.println(student.getLastName());
+		System.out.println(student.getContactEmail());
+		System.out.println(student.getAddress());
+		System.out.println(student.getModules());
 		
 		ApplicationDao dao=new ApplicationDao();
 		int rows=dao.registerUser(student);
 		
-		if(rows==0) {
-			resp.sendRedirect("/index.html");
+		if(rows>0) {
+			req.getRequestDispatcher("/index.html").forward(req, resp);
 		}
 		else {
-			
 			resp.sendRedirect("html/register.html");
 		}
 	}

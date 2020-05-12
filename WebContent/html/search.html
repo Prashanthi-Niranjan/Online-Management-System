@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<%@page import="java.util.Iterator"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List" buffer="8kb" isELIgnored="false"
-	session="true" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" isThreadSafe="true" isErrorPage="false"
-	errorPage="error.jsp"%>
-
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -26,19 +18,13 @@
 				<!-- branding -->
 				<ul class="navbar">
 					<li><a href="home">home</a></li>
-					<li><a href="#products">products</a></li>
-					<li><a href="#history">history</a></li>
-					<li><a href="login">login</a></li>
-					<li><a href="#people">people</a></li>
-					<li><a href="#search">search</a></li>
+					<li><a href="products">products</a></li>
+					<li><a href="history">history</a></li>
+					<li><a href="admin">login</a></li>
+					<li><a href="people">people</a></li>
 					<li><a href="register">new user?</a></li>
-					<li><a href="redirect">linkedIn</a></li>
 				</ul>
-				<!-- navbar -->
-
-				<!-- navbar -->
 			</div>
-			<!-- container nav-elements -->
 		</nav>
 	</header>
 
@@ -50,30 +36,10 @@
 				high-quality, nutrient-rich, nutritional products that <em>enhance
 					active lifestyles</em>.
 			</p>
-			<%
-				if (session.getAttribute("noofproducts") != null) {
-			%>
-			<span id="size"
-				title="<%=(ArrayList) session.getAttribute("noofproducts")%>">Items
-				in Cart: <%=((ArrayList) session.getAttribute("noofproducts")).size()%></span>
-			<%
-				} else {
-			%>
-			<span id="size">Items in Cart: 0</span>
-			<%
-				}
-			%>
-
 		</div>
-
-
-		<%--fetch he products from the rqq object --%>
-		<%-- iterate the list and generate the display for every product --%>
-
 
 		<div class="productContainer">
 
-			
 			<form method="get" action="products">
 
 				<div class="productContainerItem">
@@ -85,7 +51,6 @@
 			
 		</div>
 	</section>
-	<!-- #products -->
 
 	<section id="search" class="section">
 		<header class="imageheader"></header>
@@ -98,7 +63,6 @@
 			</form>
 		</div>
 	</section>
-	<!-- guarantee -->
 
 	<section id="history" class="section">
 		<div class="container">
@@ -218,12 +182,7 @@
 				not be construed to be representative of actual products on the
 				market in a similar product category.</p>
 		</div>
-		<!-- container -->
 	</footer>
-	<!-- footer -->
-
-
-
 
 </body>
 </html>
