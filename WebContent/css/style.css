@@ -57,9 +57,9 @@ em {
 
 .header {
 	background: -webkit-linear-gradient(top, rgba(0, 0, 0, .2),
-		rgba(0, 0, 0, .5)), url(../images/backgrounds/UCLanFront.jpg);
+		rgba(0, 0, 0, .5)), url(images/backgrounds/Uclan 1.jpg);
 	background: linear-gradient(180deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)),
-		url(../images/backgrounds/UCLanFront.jpg);
+		url(images/backgrounds/Uclan 1.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -88,9 +88,9 @@ em {
 @media screen and (min-width:600px) {
 	.header {
 		background: -webkit-linear-gradient(top, rgba(0, 0, 0, .2),
-			rgba(0, 0, 0, .5)), url(../images/backgrounds/UCLanFront.jpg);
+			rgba(0, 0, 0, .5)), url(../images/backgrounds/Uclan 1.jpg);
 		background: linear-gradient(180deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)),
-			url(../images/backgrounds/UCLanFront.jpg);
+			url(../images/backgrounds/Uclan 1.jpg);
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: cover;
@@ -217,9 +217,9 @@ em {
 	-ms-flex-align: end;
 	align-items: flex-end;
 	background: -webkit-linear-gradient(top, transparent, #312a10),
-		url(../images/backgrounds/discthrower.jpg);
+		url(../images/backgrounds/Uclan 1.jpg);
 	background: linear-gradient(180deg, transparent, #312a10),
-		url(../images/backgrounds/discthrower.jpg);
+		url(../images/backgrounds/Uclan 1.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -307,9 +307,9 @@ em {
 
 #products .imageheader {
 	background: -webkit-linear-gradient(top, transparent, transparent),
-		url(../images/backgrounds/swimming.jpg);
+		url(../images/backgrounds/Uclan 1.jpg);
 	background: linear-gradient(180deg, transparent, transparent),
-		url(../images/backgrounds/swimming.jpg);
+		url(../images/backgrounds/Uclan 1.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -424,9 +424,9 @@ to {
 
 #guarantee .imageheader {
 	background: -webkit-linear-gradient(top, transparent, #8f9305),
-		url(../images/backgrounds/cycling.jpg);
+		url(../images/backgrounds/Uclan 2.jpg);
 	background: linear-gradient(180deg, transparent, #8f9305),
-		url(../images/backgrounds/cycling.jpg);
+		url(../images/backgrounds/Uclan 2.jpg);
 	background-repeat: no-repeat;
 	background-position: bottom;
 	background-size: cover;
@@ -448,9 +448,9 @@ to {
 
 #people .imageheader {
 	background: -webkit-linear-gradient(top, transparent, #e7c84c),
-		url(../images/backgrounds/soccer.jpg);
+		url(../images/backgrounds/Uclan 1.jpg);
 	background: linear-gradient(180deg, transparent, #e7c84c),
-		url(../images/backgrounds/soccer.jpg);
+		url(../images/backgrounds/Uclan 1.jpg);
 	background-repeat: no-repeat;
 	background-position: top;
 	background-size: cover;
