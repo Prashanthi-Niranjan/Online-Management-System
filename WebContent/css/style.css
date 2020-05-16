@@ -57,9 +57,9 @@ em {
 
 .header {
 	background: -webkit-linear-gradient(top, rgba(0, 0, 0, .2),
-		rgba(0, 0, 0, .5)), url(../images/backgrounds/running.jpg);
+		rgba(0, 0, 0, .5)), url(../images/backgrounds/UCLanFront.jpg);
 	background: linear-gradient(180deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)),
-		url(../images/backgrounds/running.jpg);
+		url(../images/backgrounds/UCLanFront.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -88,9 +88,9 @@ em {
 @media screen and (min-width:600px) {
 	.header {
 		background: -webkit-linear-gradient(top, rgba(0, 0, 0, .2),
-			rgba(0, 0, 0, .5)), url(../images/backgrounds/running.jpg);
+			rgba(0, 0, 0, .5)), url(../images/backgrounds/UCLanFront.jpg);
 		background: linear-gradient(180deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)),
-			url(../images/backgrounds/running.jpg);
+			url(../images/backgrounds/UCLanFront.jpg);
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: cover;

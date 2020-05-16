@@ -17,6 +17,7 @@ public class ApplicationDao {
 	Connection connection=DBConnection.getConnectionToDatabase();
 
 	public int registerUser(Student student) {
+		Connection connection=DBConnection.getConnectionToDatabase();
 		int rowsEffefted=0;
 		try {
 			String sql="insert into student(id,firstname,lastname,email,address,modules) values(?,?,?,?,?,?)";
@@ -126,7 +127,6 @@ public class ApplicationDao {
 	public List<Student> listAllStudents() throws SQLException {
 		List<Student> studentlist = new ArrayList<>();
 		String sql = "SELECT * FROM student";
-		
 		int temp=0;
 		Statement statement = connection.createStatement();
 		ResultSet resultSet = statement.executeQuery(sql);
@@ -135,10 +135,15 @@ public class ApplicationDao {
 		while (resultSet.next()) {
 			int id = resultSet.getInt("id");
 			String firstName = resultSet.getString("firstName");
+			System.out.println(firstName);
 			String lastName = resultSet.getString("lastName");
+			System.out.println(lastName);
 			String contactEmail = resultSet.getString("email");
+			System.out.println(contactEmail);
 			String address = resultSet.getString("address");
+			System.out.println(address);
 			String str=resultSet.getString("modules");
+			System.out.println(str);
 			if(id!=temp&&temp!=0) {
 				studentlist.add(student);
 				mod=new ArrayList<>();
@@ -147,10 +152,19 @@ public class ApplicationDao {
 			temp=id;
 			student = new Student(id, firstName, lastName, contactEmail, address, mod);
 		}
+		studentlist.add(student);
+		for(Student e:studentlist){
+			System.out.println(e.getId());
+			System.out.println(e.getFirstName());
+			System.out.println(e.getLastName());
+			System.out.println(e.getContactEmail());
+			System.out.println(e.getAddress());
+			System.out.println(e.getModules());
+		}
 		return studentlist;
 	}
 
-	public boolean deleteBook(Student student) throws SQLException {
+	public boolean deleteStudent(Student student) throws SQLException {
 		String sql = "DELETE FROM student where id = ?";
 
 		PreparedStatement statement = connection.prepareStatement(sql);
@@ -160,18 +174,18 @@ public class ApplicationDao {
 		return rowDeleted;     
 	}
 
-	public boolean updateStudent(Student student) throws SQLException {
+	public int updateStudent(Student student) throws SQLException {
 		String sql = "UPDATE student SET firstName = ?, lastName = ?, contactEmail = ?, address=?, modules=?";
 		sql += " WHERE id = ?";
 
 		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(1, student.getFirstName() );
+		statement.setString(1 , student.getFirstName() );
 		statement.setString(2, student.getLastName());
 		statement.setString(3, student.getContactEmail());
 		statement.setString(4, student.getAddress());
 		statement.setString(5, String.valueOf(student.getModules()));
 
-		boolean rowUpdated = statement.executeUpdate() > 0;
+		int rowUpdated = statement.executeUpdate();
 		return rowUpdated;     
 	}
 
@@ -186,9 +200,9 @@ public class ApplicationDao {
 		if (resultSet.next()) {
 			String firstName = resultSet.getString("firstName");
 			String lastName = resultSet.getString("lastName");
-			String contactEmail = resultSet.getString("contactEmail");
+			String contactEmail = resultSet.getString("email");
 			String address = resultSet.getString("address");
-			String str= resultSet.getString("module");
+			String str= resultSet.getString("modules");
 			List<String> mod=new ArrayList<>();
 			mod.add(str);
 			student=new Student(id, firstName, lastName, contactEmail, address, mod);
