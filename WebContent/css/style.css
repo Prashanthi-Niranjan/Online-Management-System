@@ -57,9 +57,9 @@ em {
 
 .header {
 	background: -webkit-linear-gradient(top, rgba(0, 0, 0, .2),
-		rgba(0, 0, 0, .5)), url(images/backgrounds/Uclan 1.jpg);
+		rgba(0, 0, 0, .5)), url(../images/backgrounds/Uclan 1.jpg);
 	background: linear-gradient(180deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)),
-		url(images/backgrounds/Uclan 1.jpg);
+		url(../images/backgrounds/Uclan 1.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -424,9 +424,9 @@ to {
 
 #guarantee .imageheader {
 	background: -webkit-linear-gradient(top, transparent, #8f9305),
-		url(../images/backgrounds/Uclan 2.jpg);
+		url(../images/backgrounds/Uclan 1.jpg);
 	background: linear-gradient(180deg, transparent, #8f9305),
-		url(../images/backgrounds/Uclan 2.jpg);
+		url(../images/backgrounds/Uclan 1.jpg);
 	background-repeat: no-repeat;
 	background-position: bottom;
 	background-size: cover;
