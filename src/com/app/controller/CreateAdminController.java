@@ -15,10 +15,10 @@ import com.app.dao.ApplicationDao;
 public class CreateAdminController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
-
+	int rows=0;
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html;charset=UTF-8");
-		req.getRequestDispatcher("/html/admin.html").forward(req, resp);
+		req.getRequestDispatcher("html/createAdmin.html").forward(req, resp);
 	}
 
 	@Override
@@ -28,23 +28,24 @@ public class CreateAdminController extends HttpServlet{
 		String password=req.getParameter("password");
 
 		Admin admin=new Admin();
-		admin.setUsername(username);
-		admin.setEmail(email);
-		admin.setPassword(password);
-
-		ApplicationDao dao=new ApplicationDao();
-		int rows=dao.registerAdmin(admin);
+		if(username!=null&&email!=null&&password!=null) {
+			admin.setUsername(username);
+			admin.setEmail(email);
+			admin.setPassword(password);
+			ApplicationDao dao=new ApplicationDao();
+			rows=dao.registerAdmin(admin);
+		}else {
+			resp.getWriter().print("User credentials are Invalid");
+			req.getRequestDispatcher("html/createAdmin.html").include(req, resp);
+		}
 		
 		if(rows>0) {
 			req.getRequestDispatcher("html/LoginAdmin.html").forward(req, resp);
 		}
 		else {
 			resp.getWriter().print("User credentials are Invalid");
-			req.getRequestDispatcher("html/admin.html").include(req, resp);
+			req.getRequestDispatcher("html/createAdmin.html").include(req, resp);
 		}
 
 	}
-
-
-
 }

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.dao.ApplicationDao;
 import com.app.user.Student;
 
-@WebServlet("/EditServlet")
+@WebServlet("/editStudent")
 public class EditStudent extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
@@ -36,7 +36,7 @@ public class EditStudent extends HttpServlet{
 		out.print("<html lang='en'>");
 		out.print("<head>");
 		out.print("<meta charset='UTF-8'>");
-		out.print("<title>ABCD College</title>");
+		out.print("<title>Uclan University</title>");
 		out.print("<link rel='stylesheet' href='css/style.css'>");
 		out.print("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
 		out.print("</head><body>");
@@ -45,12 +45,11 @@ public class EditStudent extends HttpServlet{
 				"			<div class=\"container nav-elements\">\r\n" + 
 				"				<div class=\"branding\">\r\n" + 
 				"					<a href=\"home\"><img src=\"images/uclan.svg\"\r\n" + 
-				"						alt=\"ABCD College Logo\"></a>\r\n" + 
+				"						alt=\"Uclan University\"></a>\r\n" + 
 				"				</div>\r\n" + 
-				"				<!-- branding -->\r\n" + 
 				"				<ul class=\"navbar\">\r\n" + 
-				"					<li><a href=\"home\">home</a></li>\r\n" + 
-				"					<li><a href=\"redirect\">linkedIn</a></li>\r\n" + 
+				"					<li><a href=\"logout\">logout</a></li>\r\n" + 
+				"					<li><a href=\"student\">linkedIn</a></li>\r\n" + 
 				"				</ul>\r\n" + 
 				"			</div>\r\n" + 
 				"		</nav>\r\n" + 
@@ -59,7 +58,7 @@ public class EditStudent extends HttpServlet{
 				"	 <div class=\"container tagline\">\r\n" + 
 				"	 <em>Update Student</em><br/>\r\n" + 
 				"	 <em>-------------</em>");
-		out.print("<form action='EditServlet' method='post'>");
+		out.print("<form action='editStudent' method='post'>");
 		out.print("<table border='1' width='100%'>");
 		out.print("<tr><td></td><td><input type='hidden' name='id' value='"+student.getId()+"'/></td></tr>");
 		out.print("<tr><td>FirstName:</td><td><input type='text' name='firstname' value='"+student.getFirstName()+"'/></td></tr>");
@@ -95,10 +94,8 @@ public class EditStudent extends HttpServlet{
 				"		</div>\r\n" + 
 				"	</section></td></tr>");
 		out.print("</td></tr>");
-		out.print("<tr><td colspan='2'><input type='submit' value='Edit &amp; Save '/></td></tr>");
 		out.print("</table>");
 		out.print("</form>");
-		
 		out.close();
 	}
 	
@@ -112,33 +109,41 @@ public class EditStudent extends HttpServlet{
 		String lastname=request.getParameter("lastname");
 		String contactEmail=request.getParameter("contactEmail");
 		String address=request.getParameter("address");
-		String modules=request.getParameter("modules");
+		String a=request.getParameter("Java");
+		String b=request.getParameter("Python");
+		String c=request.getParameter("C++");
+		String d=request.getParameter("Spring");
+		String e=request.getParameter("SOAP");
+		String f=request.getParameter("WebServices");
+		String g=request.getParameter("JavaScript");
+		String h=request.getParameter("Angular");
+		String i=request.getParameter("Dot Net");
+		String j=request.getParameter("PHP");
+		String k=request.getParameter("HTML");
+		String l=request.getParameter("CSS");
+		String m=request.getParameter("SQL");
+		String n=request.getParameter("PL/SQL");
+		String o=request.getParameter("MongoDB");
+		String p=request.getParameter("NodeJS");
+		String q=request.getParameter("ReactJS");
+		String r=request.getParameter("MySQL");
+		String[] str= {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r};
 		List<String> list=new ArrayList<>();
-		list.add(modules);
+		for(String s:str) {
+			if(s!=null) {
+				list.add(s);
+			}
+		}
+		Student student=new Student(id, firstname, lastname, contactEmail, address, list);
 		
-		Student s=new Student();
-		s.setId(id);
-		s.setFirstName(firstname);
-		s.setLastName(lastname);
-		s.setContactEmail(contactEmail);
-		s.setAddress(address);
-		s.setModules(list);
-		
-		
-		
-		int status=0;
 		try {
-			status = new ApplicationDao().updateStudent(s);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			new ApplicationDao().updateStudent(student,id);
+			out.println("<html><body><h1>record updated<h1><body><html>");
+			request.getRequestDispatcher("html/profile.html").forward(request, response);
+		} catch (SQLException err) {
+			err.printStackTrace();
 		}
-		if(status>0){
-			response.sendRedirect("getStudentsList");
-		}else{
-			out.println("Sorry! unable to update record");
-		}
-		
+		out.println("Sorry! unable to update record");
 		out.close();
 	}
 	

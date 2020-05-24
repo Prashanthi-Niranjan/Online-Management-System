@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.dao.ApplicationDao;
 import com.app.user.Student;
 
-@WebServlet(urlPatterns = "/register")
+@WebServlet(urlPatterns = "/registerStudent")
 public class RegisterStudent extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
@@ -54,27 +54,21 @@ public class RegisterStudent extends HttpServlet{
 		}
 		Student student=new Student(id, firstname, lastname, contactEmail, address, list);
 		
-		System.out.println(student.getId());
-		System.out.println(student.getFirstName());
-		System.out.println(student.getLastName());
-		System.out.println(student.getContactEmail());
-		System.out.println(student.getAddress());
-		System.out.println(student.getModules());
-		
 		ApplicationDao dao=new ApplicationDao();
 		int rows=dao.registerUser(student);
 		
 		if(rows>0) {
-			req.getRequestDispatcher("/index.html").forward(req, resp);
+			resp.getWriter().print("Hi "+student.getFirstName()+" you have registered successfully");
+			req.getRequestDispatcher("html/studentLogin.html").forward(req, resp);
 		}
 		else {
-			resp.sendRedirect("html/register.html");
+			resp.sendRedirect("html/registerStudent.html");
 		}
 	}
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RequestDispatcher rd=req.getRequestDispatcher("/html/register.html");
+		RequestDispatcher rd=req.getRequestDispatcher("/html/registerStudent.html");
 		rd.forward(req, resp);
 	}
 	

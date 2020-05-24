@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="css/style.css">
 <meta charset="ISO-8859-1">
 <title>Student Management System</title>
-
 </head>
 <body>
 	<header id="home" class="header">
@@ -13,39 +12,31 @@
 				<div class="branding">
 					<a href="home"><img src="images/uclan.svg"
 						alt="Uclan University Logo"></a>
-						<p class="address">
-							Preston, Lancashire,UK
-						</p>
 				</div>
 				<ul class="navbar">
-					<li><a href="logout">home</a></li>
-					<li><a href="register">New Student Register Here</a></li>
-					
+					<li><a href="home">home</a></li>
+					<li><a href="register">Register Student</a></li>
 				</ul>
-				<!-- navbar -->
 			</div>
 		</nav>
 	</header>
 
-
-
-	<section></section>
-	<section id="login" class="section">
+	<section id="loggedIn" class="section">
 		<div class="container tagline">
-
-			<em>Create Admin User Account</em>
-			<form action="SaveServlet" method="post">
-				<table>
-					<tr><td>Name:</td><td><input type="text" name="username" id="username" /></td></tr>
-					<tr><td>Email:</td><td><input type="text" name="email" id="email"></td></tr>
-					<tr><td>Password:</td><td><input type="password" name="password" id="password" /></td></tr>
-					<tr><td colspan="2"><input type="submit" value="Register Student" /></td></tr>
-				</table>
-			</form>
+			<table border="1" width="70%">
+				<tr>
+					<th>id</th>
+					<th>firstName</th>
+					<th>lastName</th>
+					<th>contactEmail</th>
+					<th>address</th>
+					<th>modules</th>
+				</tr>
+				
+				
+			</table>
 		</div>
 	</section>
-	<!-- #products -->
-
 
 	<footer class="footer">
 		<div class="container">

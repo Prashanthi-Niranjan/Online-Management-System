@@ -1,4 +1,4 @@
-package com.app.controller;
+ 	package com.app.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,16 +19,6 @@ public class StudentController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int id=Integer.parseInt(req.getParameter("id"));
-		try {
-			new ApplicationDao().getStudentById(id);
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 			ApplicationDao dao=new ApplicationDao();
@@ -40,8 +30,8 @@ public class StudentController extends HttpServlet {
 			out.print("<tr><th>Id</th><th>FirstName</th><th>LastName</th><th>Email</th><th>Address</th><th>Modules</th><th>Edit</th><th>Delete</th></tr>");
 			for(Student e:studentList){
 				out.print("<center><tr><td>"+e.getId()+"</td><td>"+e.getFirstName()+"</td><td>"+e.getLastName()+"</td><td>"
-						+e.getContactEmail()+"</td><td>"+e.getAddress()+"</td><td>"+e.getModules()+"</td><td><a href='EditServlet?id="+e.getId()
-						+"'>edit</a></td><td><a href='DeleteServlet?id="+e.getId()+"'>delete</a></td></tr>");
+						+e.getContactEmail()+"</td><td>"+e.getAddress()+"</td><td>"+e.getModules()+"</td><td><a href='editStudent?id="+e.getId()
+						+"'>edit</a></td><td><a href='deleteStudent?id="+e.getId()+"'>delete</a></td></tr>");
 			}
 			out.print("</center>"+"</table>");
 			req.setAttribute("studentList", studentList);
@@ -50,7 +40,5 @@ public class StudentController extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-	
-	
 	
 }

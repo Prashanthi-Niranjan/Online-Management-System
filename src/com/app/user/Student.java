@@ -1,7 +1,12 @@
 package com.app.user;
 
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement(name = "student")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Student {
 	private int id;
 	private String firstName,lastName,contactEmail,address;

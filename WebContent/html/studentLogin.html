@@ -1,8 +1,10 @@
-<!DOCTYPE html">
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="css/style.css">
+<meta charset="ISO-8859-1">
 <title>Student Management System</title>
+
 </head>
 <body>
 	<header id="home" class="header">
@@ -14,21 +16,22 @@
 				</div>
 				<ul class="navbar">
 					<li><a href="home">home</a></li>
-					<li><a href="createAdmin">Go To Admin</a></li>
+					<li><a href="register">Register Student</a></li>
 				</ul>
 			</div>
 		</nav>
 	</header>
 
-	<section id="history" class="section">
+	<section id="loggedIn" class="section">
 		<div class="container tagline">
-		<p>
-		
-		
-		ukgds8eafiohdaio;wioguifioauieeubf
-		
-		</p>
-			<em>Create Admin User Account</em>
+
+			<em>Go To Student Account</em>
+			<form action="studentLogin" method="post">
+				<table>
+					<tr><td>Id:</td><td><input type="number" name="id" id="id" placeholder="student id"/></td></tr>
+					<tr><td colspan="2"><input type="submit" value="Login"/></td></tr>
+				</table>
+			</form>
 		</div>
 	</section>
 

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Student Management System</title>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+	<header id="home" class="header">
+		<nav class="nav" role="navigation">
+			<div class="container nav-elements">
+				<div class="branding">
+					<a href="home"><img src="images/uclan.svg"
+						alt="Uclan University Logo"></a>
+				</div>
+				<!-- branding -->
+				<ul class="navbar">
+					<li><a href="home">home</a></li>
+					<li><a href="studentLogin">Student Login</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	
+	<section id="registration" class="section">
+	 <div class="container tagline">
+	 <em>Register User</em><br/>
+	 <em>-------------</em>
+		<form action="registerStudent" method="post">
+			<ul>
+			<li>
+			Student Id: <input type="number" name="id" id="id" placeholder="student id"><br/>
+			First Name: <input type="text" name="firstname" id="firstname" placeholder="firstname"><br/>
+			Last Name:  <input type="text" name="lastname" id="lastname" placeholder="lastname"><br/>
+			Email ID:   <input type="text" name="contactEmail" id="contactEmail" placeholder="email id"><br/>
+			Address:    <textarea name="address" cols="30" rows="5" maxlength="200" placeholder="enter your address"></textarea><br>
+			<em>Select The Courses Which You want To Do ? </em>
+			<br>
+			<input type="checkbox" name="Java" value="Java" id="Java"><label for="Java"><img src="images/products/download 1.jpg" /></label>Java-Rs.120
+			<br>
+			<input type="checkbox" name="Python" value="Python" id="Python"><label for="Python"><img src="images/products/download 2.jpg" /></label>Python-Rs.130
+			<br>
+			<input type="checkbox" name="C++" value="C++" id="C++"/><label for="C++"><img src="images/products/download 3.jpg" /></label>C++-Rs.140
+			<br>
+			<input type="checkbox" name="Spring" value="Spring" id="Spring"><label for="Spring"><img src="images/products/download 4.jpg" /></label>Spring-Rs.150
+			<br>
+			<input type="checkbox" name="SOAP" value="SOAP" id="SOAP"><label for="SOAP"><img src="images/products/download 5.jpg" /></label>SOAP-Rs.160
+			<br>
+			<input type="checkbox" name="WebServices" value="WebServices" id="WebServices"><label for="WebServices"><img src="images/products/download 6.jpg" /></label>WebServices-Rs.170
+			<br>
+			<input type="checkbox" name="Javascript" value="JavaScript" id="JavaScript"><label for="JavaScript"><img src="images/products/download 7.jpg" /></label>JavaScript-Rs.180
+			<br>
+			<input type="checkbox" name="Angular" value="Angular" id="Angular"><label for="Angular"><img src="images/products/download 8.jpg" /></label>Angular Rs.190
+			<br>
+			<input type="checkbox" name="Dot Net" value="Dot Net" id="Dot Net"><label for="Dot Net"><img src="images/products/download 9.jpg" /></label>Dot Net Rs.200
+			<br>
+			<input type="checkbox" name="PHP" value="PHP" id="PHP"><label for="PHP"><img src="images/products/download 10.jpg" /></label>PHP Rs.210
+			<br>
+			<input type="checkbox" name="HTML" value="HTML" id="HTML"><label for="HTML"><img src="images/products/download 11.jpg" /></label>HTML Rs.220
+			<br>
+			<input type="checkbox" name="CSS" value="CSS" id="CSS"><label for="CSS"><img src="images/products/download 12.jpg" /></label>CSS Rs.230
+			<br>
+			<input type="checkbox" name="SQL" value="SQL" id="SQL"><label for="SQL"><img src="images/products/download 13.jpg" /></label>SQL Rs.240
+			<br>
+			<input type="checkbox" name="PL/SQL" value="PL/SQL" id="PL/SQL"><label for="PL/SQL"><img src="images/products/download 14.jpg" /></label>PL/SQL Rs.250
+			<br>
+			<input type="checkbox" name="MongoDB" value="MongoDB" id="MongoDB"><label for="MongoDB"><img src="images/products/download 15.jpg" /></label>MongoDB Rs.260
+			<br>
+			<input type="checkbox" name="NodeJS" value="NodeJS" id="NodeJS"><label for="NodeJS"><img src="images/products/download 16.jpg" /></label>NodeJS Rs.270
+			<br>
+			<input type="checkbox" name="ReactJS" value="ReactJS" id="ReactJS"><label for="ReactJS"><img src="images/products/download 17.jpg" /></label>NodeJS Rs.280
+			<br>
+			<input type="checkbox" name="MySQL" value="MySQL" id="MySQL"><label for="MySQL"><img src="images/products/download 18.jpg" /></label>MySQL Rs.290
+			<br>
+			<input type="submit" value="Submit" id="submit">
+			</li></ul>
+		</form>
+		</div>
+	</section>
+	<!-- #products -->
+
+
+	<footer class="footer">
+		<div class="container">
+			<nav class="nav" role="navigation">
+				<div class="container nav-elements">
+					<div class="branding">
+						<a href="home"><img src="images/uclan.svg"
+							alt="Uclan University Logo"></a>
+						<p class="address">
+							Preston, Lancashire,UK
+						</p>
+					</div>
+				</div>
+			</nav>
+			<p class="legal">Uclan University is a fictitious brand created by
+				Uclan University.com solely for the purpose of training. All Modules and
+				people associated with Programming Languages are also fictitious. Any 
+				real time projects, courses are easy to learn.
+				Information provided about the courses is also fictitious and should
+				not be construed to be representative of actual training on the
+				market in a similar category.</p>
+		</div>
+	</footer>
+
+</body>
+</html>
